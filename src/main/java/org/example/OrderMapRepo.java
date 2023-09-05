@@ -11,21 +11,25 @@ public class OrderMapRepo implements OrderRepo{
 
     //Schritt 3: Implementiere Methoden zum Hinzufügen, Entfernen und Abfragen von Bestellungen.
     //Methode zum Hinzufügen von Bestellungen
-    public void addOrder(int key,Order order){
-        ordersMap.put(key,order);
+    public void addOrder(Order order){
+        ordersMap.put(order.ordernumber(),order);
     }
 
 
     //Methode zum Entfernen von Bestellungen
-    public void deleteOrder(int key){
-        ordersMap.remove(key);
+    public void deleteOrder(Order order){
+        ordersMap.remove(order.ordernumber());
     }
 
     // Methode zum Abfragen von Bestellungen// return true wenn der Order noch da ist
-    public boolean isOrderStillInOrders(int key){
-        return ordersMap.containsKey(key);
+    public boolean isOrderStillInOrders(Order order){
+        return ordersMap.containsKey(order.ordernumber());
     }
 
-
-
+    @Override
+    public String toString() {
+        return "OrderMapRepo{" +
+                "ordersMap=" + ordersMap +
+                '}';
+    }
 }

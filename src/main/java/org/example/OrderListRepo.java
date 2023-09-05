@@ -5,7 +5,7 @@ import java.util.List;
 
 //Schritt 2: Implementiere die OrderListRepo-Klasse mit einer Liste zur Speicherung von Bestellunge
 
-public class OrderListRepo{
+public class OrderListRepo implements OrderRepo{
     private List<Order> orders = new ArrayList<>();
 
     //Schritt 3: Implementiere Methoden zum Hinzufügen, Entfernen und Abfragen von Bestellungen.
